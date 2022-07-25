@@ -1,0 +1,168 @@
+<script>
+// give each todo a unique id
+
+export default {
+  data() {
+    return {
+      product: 'Hype Beast Products',
+      selectedVariant: 0,
+      link: 'https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=socks',
+      details: [
+        {
+          detailId: 12,
+          title: 'Ultraboost 3.0',
+          description: 'Nagyon funky',
+          price: 120,
+        },
+      ],
+      variants: [
+        {
+          variantId: 145,
+          variantColor: 'gray',
+          variantImage:
+            'https://blog.finishline.com/wp-content/uploads/2017/02/021417_adidas_boost_social_post4.gif',
+        },
+        {
+          variantId: 175,
+          variantColor: 'black',
+          variantImage:
+            'https://blog.finishline.com/wp-content/uploads/2018/01/adidas-UltraBoost-GIF.gif',
+        },
+      ],
+      backgroundColor: 'none',
+    };
+  },
+  props: {
+    premium: {
+      type: Boolean,
+      required: true,
+    },
+  },
+  methods: {
+    addToCart() {
+      this.$emit('add-to-cart', this.variants[this.selectedVariant].variantId);
+    },
+    removeFromCart() {
+      this.$emit(
+        'remove-from-cart',
+        this.variants[this.selectedVariant].variantId,
+      );
+    },
+    updateProduct(index) {
+      this.selectedVariant = index;
+    },
+    premiumUserDiscount() {
+      if (this.premium) {
+        return 0;
+      }
+      return this.details[0].price;
+    },
+  },
+  computed: {
+    desc() {
+      return this.details[0].description;
+    },
+    price() {
+      return this.details[0].price;
+    },
+    image() {
+      return this.variants[this.selectedVariant].variantImage;
+    },
+  },
+};
+</script>
+
+<template>
+  <div>
+    <div class="items">
+      <ul class="no-bullets">
+        <li v-for="detail in details" :key="detail.title">
+          {{ detail.title }}
+        </li>
+      </ul>
+
+      <div class="product-image">
+        <img :src="image" />
+      </div>
+
+      <h2 class="h2">{{ desc }}</h2>
+      <h2 class="h2">{{ premiumUserDiscount() }}</h2>
+
+      <div
+        v-for="(variant, index) in variants"
+        :key="variant.variantId"
+        class="color-box"
+        :style="{ backgroundColor: variant.variantColor }"
+        @mouseover="updateProduct(index)"
+      ></div>
+
+      <div class="buttons">
+        <button v-on:click="addToCart">Add to Cart</button>
+        <button v-on:click="removeFromCart">Remove product</button>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style>
+.items {
+  display: inline-block;
+  padding: 5%;
+  margin-right: 125px;
+}
+
+.h1 {
+  text-align: center;
+}
+
+.formDiv {
+  display: inline;
+}
+
+img {
+  width: 150px;
+  height: 150px;
+  margin-left: 10px;
+}
+
+.product-image {
+  flex-basis: 1px;
+}
+
+.buttons {
+  display: inline-block;
+}
+
+.color-box {
+  height: 40px;
+  width: 40px;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.cart {
+  border: none;
+  text-decoration: double;
+  text-align: center;
+  background-color: #1e95ea88;
+  color: rgb(255, 255, 255);
+  width: 100px;
+  font-size: 17px;
+}
+
+.no-bullets {
+  list-style-type: none;
+  padding: 0px;
+  margin-left: 35px;
+}
+
+button {
+  margin-top: 10px;
+  border: none;
+  background-color: #1e95ea;
+  color: white;
+  height: 40px;
+  width: 100px;
+  font-size: 14px;
+}
+</style>
