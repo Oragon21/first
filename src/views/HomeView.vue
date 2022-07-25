@@ -1,8 +1,8 @@
 <template>
   <div class="home">
     <NavComponent msg="Welcome to Your Vue.js App" />
-<FormComponent></FormComponent>
-<FooterComponent></FooterComponent>
+    <FormComponent></FormComponent>
+    <FooterComponent></FooterComponent>
   </div>
 </template>
 

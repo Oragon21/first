@@ -13,35 +13,38 @@ export default {
 <template>
   <div class="nav-bar">
     <ul class="myul">
-
-      <li class="myli"><a class="active" href="#home">
-        <router-link to="/">Home</router-link>
-      </a></li>
-      <li class="myli"><a class="li-a" href="#news">Register</a></li>
-      <li class="myli"><a class="li-a" href="#contact">Login</a></li>
-      <li class="myli"><a class="li-a" href="#about">
-        <router-link to="/about">About</router-link>
-      </a></li>
-      <router-view/>
+      <li class="myli"><router-link class="router" to="/">Home</router-link>
+      </li>
+      <li class="myli"><router-link class="router" to="/register">Register</router-link></li>
+      <li class="myli"><router-link class="router" to="/login">Login</router-link></li>
+      <li class="myli"><router-link class="router" to="/about">About</router-link></li>
+      <router-view />
     </ul>
   </div>
 </template>
 <style>
+
 .myul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
   position: fixed;
+
+  transition: 0.4s;
   top: 0;
   left: 0;
   width: 100%;
   background: linear-gradient(-90deg, #fe52e1, #35e4ff);
   font-size: x-large;
 }
-
-.myli {
+.router{
   float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
 .li-a {
@@ -64,4 +67,5 @@ li a:hover:not(.active) {
   padding: 14px 16px;
   text-decoration: none;
 }
+
 </style>

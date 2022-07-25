@@ -6,7 +6,6 @@ export default {
     return {
       product: 'Hype Beast Products',
       selectedVariant: 0,
-      link: 'https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=socks',
       details: [
         {
           detailId: 12,

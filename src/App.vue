@@ -1,11 +1,11 @@
 <template>
   <div id="app">
     <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-
+      <router-link class="router" to="/"></router-link>
+      <router-link to="/about"></router-link>
+      <router-link to="/login"></router-link>
     </nav>
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
@@ -22,12 +22,11 @@ nav {
   padding: 30px;
 }
 
+.router {
+  text-decoration: none;
+}
 nav a {
   font-weight: bold;
   color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
 }
 </style>

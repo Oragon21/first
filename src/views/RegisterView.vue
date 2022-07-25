@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="register">
     <NavComponent msg="Welcome to Your Vue.js App" />
   </div>
 </template>
