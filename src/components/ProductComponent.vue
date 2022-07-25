@@ -36,6 +36,10 @@ export default {
       type: Boolean,
       required: true,
     },
+    pproduct: {
+      type: Object,
+      required: true,
+    },
   },
   methods: {
     addToCart() {
@@ -100,6 +104,7 @@ export default {
         <button v-on:click="removeFromCart">Remove product</button>
       </div>
     </div>
+    {{ pproduct.name }}
   </div>
 </template>
 

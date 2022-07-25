@@ -26,6 +26,8 @@ export default {
         this.errors.push('Age required.');
       }
 
+      this.$router.push({ name: 'about', query: { plan: 'private' } });
+
       return e.preventDefault();
     },
   },
@@ -38,7 +40,6 @@ export default {
       class="form"
       id="app"
       @submit="checkForm"
-      action="http://localhost:8080/"
     >
       <div v-if="errors.length" class="center">
         <b>Please correct the following error(s):</b>

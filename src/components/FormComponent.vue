@@ -9,6 +9,10 @@ export default {
   data() {
     return {
       cart: [],
+      products: [
+        { id: 1, name: 'dfgsdfg', price: '12433' },
+        { id: 2, name: 'hjkbvnmbnm', price: '546546' },
+      ],
     };
   },
   methods: {
@@ -37,35 +41,10 @@ export default {
       </div>
 
       <ProductComponent
+        v-for="(product, index) in products"
+        :key="index"
         :premium="false"
-        @add-to-cart="updateCart"
-        @remove-from-cart="removeItem"
-        msg="Welcome to Your Vue.js App"
-        class="asd"
-      />
-      <ProductComponent
-        :premium="true"
-        @add-to-cart="updateCart"
-        @remove-from-cart="removeItem"
-        msg="Welcome to Your Vue.js App"
-        class="asd"
-      />
-      <ProductComponent
-        :premium="false"
-        @add-to-cart="updateCart"
-        @remove-from-cart="removeItem"
-        msg="Welcome to Your Vue.js App"
-        class="asd"
-      />
-      <ProductComponent
-        :premium="true"
-        @add-to-cart="updateCart"
-        @remove-from-cart="removeItem"
-        msg="Welcome to Your Vue.js App"
-        class="asd"
-      />
-      <ProductComponent
-        :premium="false"
+        :pproduct="product"
         @add-to-cart="updateCart"
         @remove-from-cart="removeItem"
         msg="Welcome to Your Vue.js App"
