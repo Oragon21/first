@@ -11,7 +11,7 @@ import NavComponent from '@/components/NavComponent.vue';
 // @ is an alias to /src
 
 export default {
-  name: 'AboutView',
+  name: 'RegisterView',
   components: {
     NavComponent,
   },

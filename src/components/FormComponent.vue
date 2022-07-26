@@ -10,8 +10,8 @@ export default {
     return {
       cart: [],
       products: [
-        { id: 1, name: 'dfgsdfg', price: '12433' },
-        { id: 2, name: 'hjkbvnmbnm', price: '546546' },
+        { id: 1, name: 'Ultraboost 3.0', price: '120' },
+        { id: 2, name: 'Ultraboost 4.0', price: '210' },
       ],
     };
   },
@@ -44,7 +44,7 @@ export default {
         v-for="(product, index) in products"
         :key="index"
         :premium="false"
-        :pproduct="product"
+        :productObject="product"
         @add-to-cart="updateCart"
         @remove-from-cart="removeItem"
         msg="Welcome to Your Vue.js App"
@@ -77,5 +77,9 @@ export default {
   color: rgb(252, 248, 234);
   background-color: rgba(255, 219, 113, 0.554);
   font-family: 'Times New Roman', Times, serif;
+}
+
+.hide {
+  visibility: hidden !important;
 }
 </style>

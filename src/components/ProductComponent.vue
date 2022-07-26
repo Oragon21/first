@@ -36,7 +36,7 @@ export default {
       type: Boolean,
       required: true,
     },
-    pproduct: {
+    productObject: {
       type: Object,
       required: true,
     },
@@ -78,18 +78,15 @@ export default {
 <template>
   <div>
     <div class="items">
-      <ul class="no-bullets">
-        <li v-for="detail in details" :key="detail.title">
-          {{ detail.title }}
-        </li>
-      </ul>
-
+      <div class="prodName">
+        {{ productObject.name }}
+      </div>
       <div class="product-image">
         <img :src="image" />
       </div>
 
       <h2 class="h2">{{ desc }}</h2>
-      <h2 class="h2">{{ premiumUserDiscount() }}</h2>
+      <h2 class="h2">{{ productObject.price }}</h2>
 
       <div
         v-for="(variant, index) in variants"
@@ -104,7 +101,6 @@ export default {
         <button v-on:click="removeFromCart">Remove product</button>
       </div>
     </div>
-    {{ pproduct.name }}
   </div>
 </template>
 
@@ -112,7 +108,9 @@ export default {
 .items {
   display: inline-block;
   padding: 5%;
-  margin-right: 125px;
+  margin: 1%;
+  margin-bottom: 5%;
+  background-color: #82cafdb8;
 }
 
 .h1 {
@@ -168,5 +166,11 @@ button {
   height: 40px;
   width: 100px;
   font-size: 14px;
+}
+
+.prodName{
+  text-align: center;
+  font-size: x-large;
+  font-weight: bold;
 }
 </style>

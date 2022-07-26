@@ -14,7 +14,8 @@ export default {
   methods: {
     checkForm(e) {
       if (this.name && this.age) {
-        return true;
+        // return true;
+        this.$router.push({ name: 'home', query: { plan: 'private' } });
       }
 
       this.errors = [];
@@ -26,7 +27,7 @@ export default {
         this.errors.push('Age required.');
       }
 
-      this.$router.push({ name: 'about', query: { plan: 'private' } });
+      // this.$router.push({ name: 'about', query: { plan: 'private' } });
 
       return e.preventDefault();
     },

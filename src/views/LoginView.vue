@@ -15,7 +15,7 @@ import InputComponent from '@/components/InputComponent.vue';
 // @ is an alias to /src
 
 export default {
-  name: 'AboutView',
+  name: 'LoginView',
   components: {
     NavComponent,
     InputComponent,
