@@ -22,9 +22,10 @@ export default {
 
 <style>
 .centerMap {
-  margin-top: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 10px;
+  margin-top: 90px;
 }
 </style>

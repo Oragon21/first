@@ -37,10 +37,10 @@ export default {
     },
     randomGenerator() {
       // eslint-disable-next-line no-plusplus
-      for (let i = 0; i < (Math.random() * 1000); i++) {
+      for (let i = 0; i < Math.random() * 1000; i++) {
         const prod = {
           id: Math.floor(Math.random() * 10),
-          name: this.makeid(10),
+          name: this.makeid(5),
           description: this.makeid(10),
           price: Math.floor(Math.random() * 500),
         };
@@ -110,6 +110,8 @@ export default {
   background-color: rgba(255, 219, 113, 0.554);
   font-family: 'Times New Roman', Times, serif;
   margin-bottom: 100px;
+  padding-top: 10px;
+  margin-top: 100px;
 }
 
 .hide {

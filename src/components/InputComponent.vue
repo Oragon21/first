@@ -81,6 +81,8 @@ export default {
   background-color: rgba(255, 219, 113, 0.554);
   font-family: 'Times New Roman', Times, serif;
   text-align: center;
+  padding-top: 10px;
+  margin-top: 100px;
 }
 
 .ul {

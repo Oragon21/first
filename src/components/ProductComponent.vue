@@ -85,8 +85,8 @@ export default {
         <img :src="image" />
       </div>
 
-      <h2 class="h2">{{ productObject.description }}</h2>
-      <h2 class="h2">{{ productObject.price }}</h2>
+      <h3>Description: {{ productObject.description }}</h3>
+      <h3>Price: {{ productObject.price }}</h3>
 
       <div
         v-for="(variant, index) in variants"
@@ -133,6 +133,8 @@ img {
 
 .buttons {
   display: inline-block;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .color-box {
@@ -154,7 +156,6 @@ img {
 
 .no-bullets {
   list-style-type: none;
-  padding: 0px;
   margin-left: 35px;
 }
 
