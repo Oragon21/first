@@ -8,8 +8,8 @@ export default {
       selectedVariant: 0,
       details: [
         {
-          detailId: 12,
-          title: 'Ultraboost 3.0',
+          id: 12,
+          name: 'Ultraboost 3.0',
           description: 'Nagyon funky',
           price: 120,
         },
@@ -85,7 +85,7 @@ export default {
         <img :src="image" />
       </div>
 
-      <h2 class="h2">{{ desc }}</h2>
+      <h2 class="h2">{{ productObject.description }}</h2>
       <h2 class="h2">{{ productObject.price }}</h2>
 
       <div
@@ -168,7 +168,7 @@ button {
   font-size: 14px;
 }
 
-.prodName{
+.prodName {
   text-align: center;
   font-size: x-large;
   font-weight: bold;

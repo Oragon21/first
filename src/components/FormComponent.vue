@@ -2,6 +2,9 @@
 import ProductComponent from './ProductComponent.vue';
 
 export default {
+  created() {
+    this.randomGenerator();
+  },
   components: {
     ProductComponent,
   },
@@ -10,12 +13,40 @@ export default {
     return {
       cart: [],
       products: [
-        { id: 1, name: 'Ultraboost 3.0', price: '120' },
-        { id: 2, name: 'Ultraboost 4.0', price: '210' },
+        {
+          id: 12,
+          name: 'Ultraboost 3.0',
+          description: 'Nagyon funky',
+          price: 120,
+        },
       ],
     };
   },
   methods: {
+    makeid(length) {
+      let result = '';
+      const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      const charactersLength = characters.length;
+      // eslint-disable-next-line no-plusplus
+      for (let i = 0; i < length; i++) {
+        result += characters.charAt(
+          Math.floor(Math.random() * charactersLength),
+        );
+      }
+      return result;
+    },
+    randomGenerator() {
+      // eslint-disable-next-line no-plusplus
+      for (let i = 0; i < (Math.random() * 1000); i++) {
+        const prod = {
+          id: Math.floor(Math.random() * 10),
+          name: this.makeid(10),
+          description: this.makeid(10),
+          price: Math.floor(Math.random() * 500),
+        };
+        this.products.push(prod);
+      }
+    },
     updateCart(id) {
       this.cart.push(id);
     },
@@ -41,6 +72,7 @@ export default {
       </div>
 
       <ProductComponent
+        v-show="randomGenerator"
         v-for="(product, index) in products"
         :key="index"
         :premium="false"
@@ -77,6 +109,7 @@ export default {
   color: rgb(252, 248, 234);
   background-color: rgba(255, 219, 113, 0.554);
   font-family: 'Times New Roman', Times, serif;
+  margin-bottom: 100px;
 }
 
 .hide {
