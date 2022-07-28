@@ -1,9 +1,12 @@
 import Vue from 'vue';
 import * as VueGoogleMaps from 'vue2-google-maps';
+import axios from 'axios';
 import App from './App.vue';
 import router from './router';
+import store from './store';
 
 Vue.config.productionTip = false;
+Vue.prototype.axios = axios;
 
 Vue.use(VueGoogleMaps, {
   load: {
@@ -30,6 +33,8 @@ Vue.use(VueGoogleMaps, {
 });
 new Vue({
   el: '#app',
+
+  store,
 
   data: {
     premium: true,
