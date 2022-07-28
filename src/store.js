@@ -3,10 +3,16 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
-// eslint-disable-next-line import/prefer-default-export
-export const store = new Vuex.Store({
+export default new Vuex.Store({
   state: {
-    users: 'asd',
+    formTitle: 'HYPE BEAST PRODUCTS',
 
+  },
+  mutations: {},
+  actions: {},
+  getters: {
+    getTitle() {
+      return this.state.formTitle;
+    },
   },
 });

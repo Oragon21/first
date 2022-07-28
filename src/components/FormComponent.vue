@@ -11,6 +11,7 @@ export default {
 
   data() {
     return {
+      formTitle: 'HYPE BEAST PRODUCTS',
       cart: [],
       products: [
         {
@@ -21,6 +22,11 @@ export default {
         },
       ],
     };
+  },
+  computed: {
+    getTitle() {
+      return this.$store.getters.getTitle;
+    },
   },
   methods: {
     makeid(length) {
@@ -66,7 +72,7 @@ export default {
 <template>
   <div class="formDiv">
     <div class="product-info">
-      <h1 class="h1">HYPE BEAST PRODUCTS</h1>
+      <h1 class="h1">{{ formTitle }}</h1>
       <div class="cart">
         <p>Cart {{ cart.length }}</p>
       </div>

@@ -4,7 +4,6 @@
 export default {
   data() {
     return {
-      product: 'Hype Beast Products',
       selectedVariant: 0,
       details: [
         {
@@ -19,13 +18,13 @@ export default {
           variantId: 145,
           variantColor: 'gray',
           variantImage:
-            'https://blog.finishline.com/wp-content/uploads/2017/02/021417_adidas_boost_social_post4.gif',
+            'https://www.softmoc.com/items/images/H00276_AnimatedGIF.gif',
         },
         {
           variantId: 175,
           variantColor: 'black',
           variantImage:
-            'https://blog.finishline.com/wp-content/uploads/2018/01/adidas-UltraBoost-GIF.gif',
+            'https://upload.wikimedia.org/wikipedia/commons/7/72/Adidas_Yeezy_Boost_350_Pirate_Black.gif',
         },
       ],
       backgroundColor: 'none',
